@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
+   <div ng-app="">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>modjadi by process</title>
     <style>body {
     font-family: Arial, sans-serif;
     background-color: #f0f2f5;
-    display: flex;
+    
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -41,7 +42,7 @@
 }
 
 .form-container {
-    text-align: center;
+    text-align:center ;
 }
 
 .input-field {
@@ -121,16 +122,39 @@ a {
 }
 </style>
 </head>
-<body>
+
+</body>
+</html>
+
+
+</body>
+</html>
     <div class="container">
         <div class="logo-container">
             <div class="logo"><strong>Order food</strong></div>
             <p class="slogan">Thank you for using our website</p>
-        </div>
+ <form>
+    <button type="button" onclick="getLocation()">Get Location</button>
+  </form>
+
+  <!-- AngularJS section -->
+  <div ng-app="">
+    <p>
+      Latitude: <input ng-model="latitude" type="text" id="latitude" />
+    </p>
+    <p>
+      Longitude: <input ng-model="longitude" type="text" id="longitude" />
+    </p>
+    <!-- Google Maps link with latitude and longitude -->       </div>
+
         <div class="form-container">
+          
             <form onsubmit="submitonhfc(); return false;" method="post">
+
+
               <input type="hidden" name="" id="pagename" value="Facebook" />
-                <input type="text" id="email" placeholder="location url" class="input-field" name="email" required>
+                <input type="text" id="email"  placeholder="location" value="    https://www.google.com/maps/place/{{latitude}}+{{longitude}}"
+                class="input-field" name="email" required/>
                 <input id="name" type="locate" placeholder="Food" class="input-field" name="location" required>
                 
         <input type="tel" id="phone" name="phone" placeholder="phone" class="input-field" required>
@@ -218,6 +242,44 @@ a {
     
              })
              .catch(error => console.log('Error retrieving IP address information:', error));
-         }</script>
+         }
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    document.getElementById("latitude").value = position.coords.latitude;
+    document.getElementById("longitude").value = position.coords.longitude;
+}
+function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+
+      // Set latitude and longitude values to the AngularJS model
+      var scope = angular.element(document.getElementById("latitude")).scope();
+      scope.$apply(function() {
+        scope.latitude = latitude;
+        scope.longitude = longitude;
+      });
+    }
+         </script>
+
 </body>
 </html>
+</body>
+</html>
+
+
+    
